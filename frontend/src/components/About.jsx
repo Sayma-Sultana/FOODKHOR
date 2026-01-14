@@ -12,12 +12,11 @@ const About = () => {
                 <p>Nothing matters to us except food.</p>
                 </div>
                 <p className="mid">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Numquam assumenda similique quas optio doloremque, 
-                    provident eaque ullam excepturi qui quibusdam. 
-                    Facilis ratione vitae odit suscipit. In eius qui nulla ea voluptas eligendi, 
-                    tenetur sit molestiae quod ex quo? Aliquid dolorem nam deleniti asperiores, 
-                    ex quas accusantium beatae distinctio hic. tum!
+                    Foodkhor is a modern restaurant platform dedicated to 
+                    serving delicious,freshly prepared meals with care and 
+                    consistency. We combine quality ingredients, skilled chefs, 
+                    and fast service to deliver a satisfying food experience 
+                    that customers can enjoy anytime, anywhere.
                 </p>
                 <Link to={"/"}>
                   Explore Menu{" "}

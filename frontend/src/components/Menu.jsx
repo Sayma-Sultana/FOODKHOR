@@ -8,9 +8,8 @@ const Menu = () => {
         <div className="heading_section">
            <h1 className='heading'>POPULAR DISHES</h1>
            <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Sunt impedit molestiae ex quidem esse dolores quas quis atque, 
-            tenetur minima.
+            Our popular dishes are loved for their flavor, freshness,
+            and consistent quality.
            </p>
           </div>
           <div className="dishes_container">
