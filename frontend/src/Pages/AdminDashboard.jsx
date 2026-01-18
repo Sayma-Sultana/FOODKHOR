@@ -1,8 +1,9 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useAuth } from '../context/AuthContext';
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 
 const AdminDashboard = () => {
     const { user, loading } = useAuth();
@@ -27,8 +28,13 @@ const AdminDashboard = () => {
                             <p>Email: {user.email}</p>
                             <p>Role: {user.role}</p>
                         </div>
-                        <div className="dashboard_info">
-                            <p>Admin dashboard features coming soon...</p>
+                        <div className="dashboard_actions">
+                            <Link to="/admin/orders" className="dashboard_link">
+                                Manage Pending Orders <HiOutlineArrowNarrowRight />
+                            </Link>
+                            <Link to="/order-history" className="dashboard_link">
+                                View All Orders <HiOutlineArrowNarrowRight />
+                            </Link>
                         </div>
                     </div>
                 </div>

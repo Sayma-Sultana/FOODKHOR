@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { data } from '../restApi.json';
@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 
 const DishDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const menuItems = data[0].menuItems || [];
   const dishes = data[0].dishes || [];
   const dish = menuItems.find((item) => String(item.id) === String(id)) || 
@@ -36,7 +37,7 @@ const DishDetail = () => {
 
   const handleOrder = () => {
     addToCart();
-    toast.success('Order placed! Check your cart.');
+    navigate('/cart');
   };
 
   if (!dish) {

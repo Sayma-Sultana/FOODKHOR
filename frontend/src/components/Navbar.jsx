@@ -1,17 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaShoppingCart } from "react-icons/fa";
 import { data } from "../restApi.json";
 import { useAuth } from "../context/AuthContext";
 import toast from 'react-hot-toast';
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
+    const [cartCount, setCartCount] = useState(0);
     const location = useLocation();
     const navigate = useNavigate();
     const isHomePage = location.pathname === '/';
     const { user, logout, loading } = useAuth();
+
+    useEffect(() => {
+        const updateCartCount = () => {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            setCartCount(count);
+        };
+        updateCartCount();
+        window.addEventListener('storage', updateCartCount);
+        const interval = setInterval(updateCartCount, 1000);
+        return () => {
+            window.removeEventListener('storage', updateCartCount);
+            clearInterval(interval);
+        };
+    }, []);
 
     const handleLogout = async () => {
         const result = await logout();
@@ -48,13 +65,23 @@ const Navbar = () => {
           </div>
           <div className="nav_actions">
             <Link to="/menu" className='menuBtn' onClick={() => setShow(false)}>OUR MENU</Link>
+            <Link to="/cart" className="cart_icon" onClick={() => setShow(false)}>
+              <FaShoppingCart />
+              {cartCount > 0 && <span className="cart_badge">{cartCount}</span>}
+            </Link>
             {!loading && (
               <>
                 {user ? (
                   <div className="user_info">
+                    <Link to="/order-history" className="order_history_link" onClick={() => setShow(false)}>
+                      Orders
+                    </Link>
                     <span className="user_name">{user.firstName}</span>
                     {user.role === 'admin' && (
-                      <Link to="/admin/dashboard" className="admin_link" onClick={() => setShow(false)}>Admin</Link>
+                      <>
+                        <Link to="/admin/orders" className="admin_link" onClick={() => setShow(false)}>Manage Orders</Link>
+                        <Link to="/admin/dashboard" className="admin_link" onClick={() => setShow(false)}>Dashboard</Link>
+                      </>
                     )}
                     <button className="logoutBtn" onClick={handleLogout}>Logout</button>
                   </div>

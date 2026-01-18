@@ -11,6 +11,9 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import AdminAuth from "./Pages/AdminAuth";
 import AdminDashboard from "./Pages/AdminDashboard";
+import Cart from "./Pages/Cart";
+import AdminOrders from "./Pages/AdminOrders";
+import OrderHistory from "./Pages/OrderHistory";
 
 const App = () => {
   return (
@@ -25,6 +28,9 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/admin" element={<AdminAuth />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/orders" element={<AdminOrders />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order-history" element={<OrderHistory />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />
