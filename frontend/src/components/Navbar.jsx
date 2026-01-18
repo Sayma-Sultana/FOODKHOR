@@ -1,30 +1,39 @@
 import React, { useState } from 'react';
-import { Link } from "react-scroll";
+import { Link, useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { data } from "../restApi.json";
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+
   return (
     <nav>
-        <div className="logo">FOODKHOR</div>
+        <Link to="/" className="logo">FOODKHOR</Link>
         <div className={show ? "navLinks showmenu": "navLinks"}>
           <div className="links">
-            {data[0].navbarLinks.map((element) => {
-              return (
-                <Link
-                to={element.link}
-                key={element.id}
-                spy={true}
-                smooth={true}
-                duration={500}
-                >
-                  {element.title}
-                </Link>
-              );
-            })}
+            {isHomePage ? (
+              data[0].navbarLinks.map((element) => {
+                return (
+                  <ScrollLink
+                  to={element.link}
+                  key={element.id}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => setShow(false)}
+                  >
+                    {element.title}
+                  </ScrollLink>
+                );
+              })
+            ) : (
+              <Link to="/" onClick={() => setShow(false)}>HOME</Link>
+            )}
           </div>
-          <button className='menuBtn'>OUR MENU</button>
+          <Link to="/menu" className='menuBtn' onClick={() => setShow(false)}>OUR MENU</Link>
         </div>
         <div className='hamburger' onClick ={() => setShow(!show)}>
           <GiHamburgerMenu />

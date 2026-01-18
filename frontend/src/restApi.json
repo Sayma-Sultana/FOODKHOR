@@ -3,95 +3,307 @@
         {"ourQualities" : [
             {
                 "id": 1,
-                "image": "./quality_food.svg",
+                "image": "/quality_food.svg",
                 "title": "QUALITY FOOD",
                 "description": "We use fresh ingredients and maintain strict standards to ensure healthy, high-quality meals." 
             },
             {
                 "id": 2,
-                "image": "./super_taste.svg",
+                "image": "/super_taste.svg",
                 "title": "SUPER TASTE",
                 "description": "Every dish is crafted with balanced flavors to deliver rich taste and lasting satisfaction." 
             },
             {
                 "id": 3,
-                "image": "./fast_delivery.svg",
+                "image": "/fast_delivery.svg",
                 "title": "FAST DELIVERY",
                 "description": "Our efficient delivery system ensures your food arrives hot, fresh, and on time." 
+            }
+        ],
+        "menuCategories": [
+            {
+                "id": 1,
+                "name": "Breakfast"
+            },
+            {
+                "id": 2,
+                "name": "Lunch/Dinner"
+            },
+            {
+                "id": 3,
+                "name": "Fastfoods"
+            }
+        ],
+        "menuItems": [
+            {
+                "id": 1,
+                "title": "Coffee",
+                "category": "Breakfast",
+                "image": "/coffee.png",
+                "price": 120,
+                "description": "Freshly brewed premium coffee made from the finest coffee beans, served hot with a rich aroma and smooth taste."
+            },
+            {
+                "id": 2,
+                "title": "Pancake",
+                "category": "Breakfast",
+                "image": "/pancake.png",
+                "price": 180,
+                "description": "Fluffy golden pancakes served with maple syrup, butter, and fresh berries. A perfect start to your day."
+            },
+            {
+                "id": 3,
+                "title": "Ruti Bhaji",
+                "category": "Breakfast",
+                "image": "/ruti_bhaji.png",
+                "price": 150,
+                "description": "Traditional Bengali breakfast with soft roti and flavorful mixed vegetables, cooked with aromatic spices."
+            },
+            {
+                "id": 4,
+                "title": "Stuffed Strawberry",
+                "category": "Breakfast",
+                "image": "/dinner3.png",
+                "price": 200,
+                "description": "Fresh strawberries stuffed with a creamy vanilla filling and drizzled with dark chocolate sauce."
+            },
+            {
+                "id": 5,
+                "title": "Chicken Biriyani",
+                "category": "Lunch/Dinner",
+                "image": "/chicken_biriyani1.png",
+                "price": 350,
+                "description": "Fragrant basmati rice cooked with tender chicken pieces, aromatic spices, and herbs. Served with raita and salad."
+            },
+            {
+                "id": 6,
+                "title": "Chicken Curry",
+                "category": "Lunch/Dinner",
+                "image": "/chicken_curry1.png",
+                "price": 320,
+                "description": "Tender chicken pieces cooked in a rich, spicy curry with onions, tomatoes, and traditional spices. Served with rice or roti."
+            },
+            {
+                "id": 7,
+                "title": "Dal Bhat",
+                "category": "Lunch/Dinner",
+                "image": "/dal_bhat.png",
+                "price": 180,
+                "description": "Traditional lentil curry served with steamed rice, a staple comfort food that's both nutritious and delicious."
+            },
+            {
+                "id": 8,
+                "title": "Egg Curry",
+                "category": "Lunch/Dinner",
+                "image": "/egg_curry.png",
+                "price": 200,
+                "description": "Hard-boiled eggs cooked in a flavorful curry with onions, tomatoes, and aromatic spices. Perfect with rice or roti."
+            },
+            {
+                "id": 9,
+                "title": "Kacchi",
+                "category": "Lunch/Dinner",
+                "image": "/kacchi.png",
+                "price": 450,
+                "description": "Premium mutton biriyani cooked with raw marinated meat and basmati rice, slow-cooked to perfection with aromatic spices."
+            },
+            {
+                "id": 10,
+                "title": "Mach Bhat",
+                "category": "Lunch/Dinner",
+                "image": "/mach_bhat.png",
+                "price": 380,
+                "description": "Traditional fish curry with rice, a Bengali favorite featuring fresh fish cooked in a tangy and spicy gravy."
+            },
+            {
+                "id": 11,
+                "title": "Mutton Curry",
+                "category": "Lunch/Dinner",
+                "image": "/mutton_curry.png",
+                "price": 400,
+                "description": "Tender mutton pieces slow-cooked in a rich, spicy curry with traditional spices. Served with rice or naan."
+            },
+            {
+                "id": 12,
+                "title": "Shorshe Ilish",
+                "category": "Lunch/Dinner",
+                "image": "/shorshe ilish.png",
+                "price": 500,
+                "description": "Hilsa fish cooked in a mustard-based curry, a signature Bengali dish known for its unique flavor and aroma."
+            },
+            {
+                "id": 13,
+                "title": "Roasted Lamb Rump",
+                "category": "Lunch/Dinner",
+                "image": "/dinner1.jpeg",
+                "price": 550,
+                "description": "Slow-roasted lamb rump seasoned with garlic, rosemary, and herbs, served with buttery mashed potatoes and seasonal vegetables."
+            },
+            {
+                "id": 14,
+                "title": "Citrus Cured Salmon",
+                "category": "Lunch/Dinner",
+                "image": "/dinner2.png",
+                "price": 480,
+                "description": "Fresh salmon cured with lemon and orange zest, topped with microgreens and served with a light citrus dressing."
+            },
+            {
+                "id": 15,
+                "title": "Mussels Soup",
+                "category": "Lunch/Dinner",
+                "image": "/dinner4.png",
+                "price": 350,
+                "description": "Rich and aromatic soup made with fresh mussels, white wine, garlic, and herbs, served with toasted bread."
+            },
+            {
+                "id": 16,
+                "title": "Grilled Fish",
+                "category": "Lunch/Dinner",
+                "image": "/dinner6.png",
+                "price": 420,
+                "description": "Marinated fish fillet grilled over an open flame, served with roasted vegetables and lemon wedges."
+            },
+            {
+                "id": 17,
+                "title": "Pan Seared Sea Bass",
+                "category": "Lunch/Dinner",
+                "image": "/breakfast1.png",
+                "price": 450,
+                "description": "Delicate sea bass fillet pan seared to perfection, paired with sautéed greens and a zesty lemon butter sauce."
+            },
+            {
+                "id": 18,
+                "title": "Burger",
+                "category": "Fastfoods",
+                "image": "/burger1.png",
+                "price": 250,
+                "description": "Juicy beef patty with fresh lettuce, tomato, onion, pickles, and special sauce in a toasted bun. Served with crispy fries."
+            },
+            {
+                "id": 19,
+                "title": "French Fries",
+                "category": "Fastfoods",
+                "image": "/french_fries1.png",
+                "price": 120,
+                "description": "Crispy golden french fries, perfectly seasoned and served hot. A classic side dish that pairs with everything."
+            },
+            {
+                "id": 20,
+                "title": "Fried Chicken",
+                "category": "Fastfoods",
+                "image": "/fried_chicken1.png",
+                "price": 280,
+                "description": "Crispy fried chicken pieces marinated in special spices, deep-fried to golden perfection. Served with dipping sauce."
+            },
+            {
+                "id": 21,
+                "title": "Fuchka",
+                "category": "Fastfoods",
+                "image": "/fuchka.png",
+                "price": 80,
+                "description": "Crispy hollow puris filled with spiced mashed potatoes, chickpeas, and tangy tamarind water. A popular street food favorite."
+            },
+            {
+                "id": 22,
+                "title": "Hotdog",
+                "category": "Fastfoods",
+                "image": "/hotdog.png",
+                "price": 200,
+                "description": "Classic hotdog with grilled sausage in a soft bun, topped with mustard, ketchup, onions, and relish."
+            },
+            {
+                "id": 23,
+                "title": "Pizza",
+                "category": "Fastfoods",
+                "image": "/pizza.png",
+                "price": 450,
+                "description": "Wood-fired pizza with fresh mozzarella, premium toppings, and our signature tomato sauce on a crispy thin crust."
+            },
+            {
+                "id": 24,
+                "title": "Sub Sandwich",
+                "category": "Fastfoods",
+                "image": "/subsandwich1.png",
+                "price": 220,
+                "description": "Fresh sub sandwich loaded with your choice of meats, cheese, fresh vegetables, and condiments in a soft roll."
+            },
+            {
+                "id": 25,
+                "title": "Italian Spaghetti",
+                "category": "Fastfoods",
+                "image": "/dinner5.png",
+                "price": 300,
+                "description": "Classic Italian spaghetti tossed in a slow-cooked tomato and basil sauce, finished with parmesan cheese."
+            },
+            {
+                "id": 26,
+                "title": "Beef Burger Meal",
+                "category": "Fastfoods",
+                "image": "/beef_burger_meal1.png",
+                "price": 320,
+                "description": "Juicy grilled beef burger with cheddar cheese, lettuce, tomato, and house sauce, served with crispy fries and a drink."
             }
         ],
         "dishes": [
             {
                 "id": 1,
-                "image": "./dinner1.jpeg",
-                "title": "ROASTED LAMB RUMP",
-                "category": "Dinner"
+                "title": "Kacchi",
+                "category": "Lunch/Dinner",
+                "image": "/kacchi.png",
+                "price": 450,
+                "description": "Premium mutton biriyani cooked with raw marinated meat and basmati rice, slow-cooked to perfection with aromatic spices.",
+                "popular": true
             },
             {
                 "id": 2,
-                "image": "./dinner2.png",
-                "title": "CITRUS CURED SALMON",
-                "category": "Dinner"
+                "title": "Chicken Biriyani",
+                "category": "Lunch/Dinner",
+                "image": "/chicken_biriyani1.png",
+                "price": 350,
+                "description": "Fragrant basmati rice cooked with tender chicken pieces, aromatic spices, and herbs. Served with raita and salad.",
+                "popular": true
             },
             {
                 "id": 3,
-                "image": "./breakfast1.png",
-                "title": "PAN SEARED SEA BASS",
-                "category": "Breakfast"
+                "title": "Pizza",
+                "category": "Fastfoods",
+                "image": "/pizza.png",
+                "price": 450,
+                "description": "Wood-fired pizza with fresh mozzarella, premium toppings, and our signature tomato sauce on a crispy thin crust.",
+                "popular": true
             },
             {
                 "id": 4,
-                "image": "./dinner3.png",
-                "title": "STUFFED STRAWBERRY",
-                "category": "Dinner"
-            },
-            {
-                "id": 5,
-                "image": "./lunch1.png",
-                "title": "BEEF BURGER MEAL",
-                "category": "Lunch"
-            },
-            {
-                "id": 6,
-                "image": "./dinner4.png",
-                "title": "MUSSELS SOUP",
-                "category": "Dinner"
-            },
-            {
-                "id": 7,
-                "image": "./dinner5.png",
-                "title": "ITALIAN SPAGHETTI",
-                "category": "Dinner"
-            },
-            {
-                "id": 8,
-                "image": "./dinner6.png",
-                "title": "GRILLED FISH",
-                "category": "Dinner"
+                "title": "Fuchka",
+                "category": "Fastfoods",
+                "image": "/fuchka.png",
+                "price": 80,
+                "description": "Crispy hollow puris filled with spiced mashed potatoes, chickpeas, and tangy tamarind water. A popular street food favorite.",
+                "popular": true
             }
         ],
         "team": [
             {
                 "id": 1,
-                "image": "./team_member_1.png",
+                "image": "/team_member_1.png",
                 "name": "JOHNATHAN TYLER",
                 "designation": "Founder & Head Chef"
             },
             {
                 "id": 2,
-                "image": "./team_member_2.png",
+                "image": "/team_member_2.png",
                 "name": "WADE WARREN",
                 "designation": "Sous Chef"
             },
             {
                 "id": 3,
-                "image": "./team_member_3.png",
+                "image": "/team_member_3.png",
                 "name": "JHON DOE",
                 "designation": "Fast Food Chef"
             },
             {
                 "id": 4,
-                "image": "./team_member_4.png",
+                "image": "/team_member_4.png",
                 "name": "ALEX COAL",
                 "designation": "Senior Chef"
             }
@@ -99,21 +311,21 @@
         "testimonials": [
             {
                 "id": 1,
-                "image": "./review1.png",
+                "image": "/review1.png",
                 "description": "Morbi nulla nec dui lacus, in. Libero in pretium metus massa. Sodales dignissim vitae mauris varius faucibus. Eleifend dui, non laoreet ac luctus facilisis diam. Enim scelerisque vel at id viverra tellus.",
                 "rating": 4,
                 "userName": "Jane Cooper"
             },
             {
                 "id": 2,
-                "image": "./review2.png",
+                "image": "/review2.png",
                 "description": "Tortor vel nunc netus pharetra enim, enim dolor mauris in. Sit nam fringilla in egestas. Libero condimentum quis in vulputate adipiscing venenatis augue. Venenatis faucibus.",
                 "rating": 4.5,
                 "userName": "Esther Howard"
             },
             {
                 "id": 3,
-                "image": "./review3.png",
+                "image": "/review3.png",
                 "description": "Tortor vel nunc netus pharetra enim, enim dolor mauris in. Sit nam fringilla in egestas. Libero condimentum quis in vulputate adipiscing venenatis augue. Venenatis faucibus.",
                 "rating": 5,
                 "userName": "Guy Hawkins"

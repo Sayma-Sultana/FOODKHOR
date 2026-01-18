@@ -18,7 +18,7 @@ const About = () => {
                     and fast service to deliver a satisfying food experience 
                     that customers can enjoy anytime, anywhere.
                 </p>
-                <Link to={"/"}>
+                <Link to={"/menu"}>
                   Explore Menu{" "}
                   <span>
                     <HiOutlineArrowNarrowRight/>
