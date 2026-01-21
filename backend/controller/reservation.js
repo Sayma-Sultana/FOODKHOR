@@ -22,3 +22,61 @@ export const sendReservation = async (req, res, next) => {
         return next(error);
     }
 };
+
+export const getAllReservations = async (req, res, next) => {
+    try {
+        const reservations = await Reservation.find().sort({ reservationDate: -1 });
+        res.status(200).json({
+            success: true,
+            reservations,
+        });
+    } catch (error) {
+        return next(error);
+    }
+};
+
+export const getPendingReservations = async (req, res, next) => {
+    try {
+        const reservations = await Reservation.find({ status: "pending" }).sort({ reservationDate: -1 });
+        res.status(200).json({
+            success: true,
+            reservations,
+        });
+    } catch (error) {
+        return next(error);
+    }
+};
+
+export const updateReservationStatus = async (req, res, next) => {
+    try {
+        const { reservationId } = req.params;
+        const { status } = req.body;
+
+        if (!["confirmed", "cancelled", "completed"].includes(status)) {
+            return next(
+                new ErrorHandler("Invalid status! Status must be: confirmed, cancelled, or completed", 400)
+            );
+        }
+
+        const reservation = await Reservation.findByIdAndUpdate(
+            reservationId,
+            { status },
+            {
+                new: true,
+                runValidators: true,
+            }
+        );
+
+        if (!reservation) {
+            return next(new ErrorHandler("Reservation not found!", 404));
+        }
+
+        res.status(200).json({
+            success: true,
+            message: `Reservation status updated to ${status}`,
+            reservation,
+        });
+    } catch (error) {
+        return next(error);
+    }
+};

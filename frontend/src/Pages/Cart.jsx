@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
+import { getCartKey } from '../utils/cartUtils';
 
 const Cart = () => {
     const [cart, setCart] = useState([]);
@@ -19,9 +20,9 @@ const Cart = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const savedCart = JSON.parse(localStorage.getItem('cart') || '[]');
+        const savedCart = JSON.parse(localStorage.getItem(getCartKey(user)) || '[]');
         setCart(savedCart);
-    }, []);
+    }, [user]);
 
     const updateQuantity = (id, change) => {
         const updatedCart = cart.map(item => {
@@ -32,13 +33,13 @@ const Cart = () => {
             return item;
         });
         setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        localStorage.setItem(getCartKey(user), JSON.stringify(updatedCart));
     };
 
     const removeItem = (id) => {
         const updatedCart = cart.filter(item => item.id !== id);
         setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        localStorage.setItem(getCartKey(user), JSON.stringify(updatedCart));
         toast.success('Item removed from cart');
     };
 
@@ -46,7 +47,7 @@ const Cart = () => {
 
     const handlePlaceOrder = async (e) => {
         e.preventDefault();
-        
+
         if (!user) {
             toast.error('Please login to place an order');
             navigate('/login');
@@ -83,7 +84,7 @@ const Cart = () => {
                 }
             );
             toast.success(data.message);
-            localStorage.removeItem('cart');
+            localStorage.removeItem(getCartKey(user));
             setCart([]);
             navigate('/order-history');
         } catch (error) {

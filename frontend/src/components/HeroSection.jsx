@@ -20,7 +20,7 @@ const HeroSection = () => {
                         <h1 className="title dishes_title">Dishes</h1>
                         <img src="/threelines.svg" alt="three" />
                       </div>
-                     <img src="/logo.svg" alt="logo" className="logo" />
+                     <img src="/logo2.png" alt="logo" className="logo" />
                   </div>
                 </div>
               </div>

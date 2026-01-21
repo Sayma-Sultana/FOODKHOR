@@ -32,8 +32,14 @@ const AdminDashboard = () => {
                             <Link to="/admin/orders" className="dashboard_link">
                                 Manage Pending Orders <HiOutlineArrowNarrowRight />
                             </Link>
+                            <Link to="/admin/reservations" className="dashboard_link">
+                                Manage Reservations <HiOutlineArrowNarrowRight />
+                            </Link>
                             <Link to="/order-history" className="dashboard_link">
                                 View All Orders <HiOutlineArrowNarrowRight />
+                            </Link>
+                            <Link to="/admin/reservation-history" className="dashboard_link">
+                                Reservation History <HiOutlineArrowNarrowRight />
                             </Link>
                         </div>
                     </div>

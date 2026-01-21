@@ -3,11 +3,15 @@
 * {
   font-family: "Oswald", sans-serif;
   box-sizing: border-box;
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
-::-webkit-scrollbar{
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
   display: none;
 }
 
@@ -25,6 +29,7 @@ nav {
   border-bottom-right-radius: 7px;
   border-bottom-left-radius: 7px;
 }
+
 nav::after {
   content: "";
   position: absolute;
@@ -34,6 +39,7 @@ nav::after {
   width: 100%;
   background: rgb(201, 201, 201);
 }
+
 nav .logo {
   flex: 1;
   display: flex;
@@ -43,6 +49,7 @@ nav .logo {
   text-decoration: none;
   color: inherit;
 }
+
 nav .navLinks {
   flex: 2;
   display: flex;
@@ -50,51 +57,73 @@ nav .navLinks {
   align-items: center;
   gap: 20px;
 }
+
 nav .navLinks .links {
   display: flex;
   gap: 25px;
+  align-items: center;
 }
+
 nav .navLinks .links a {
   text-decoration: none;
   color: #555;
   font-size: 20px;
   font-weight: 300;
   letter-spacing: 1.4px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
+
 nav .navLinks .links a:hover {
   color: #222;
   transition: 0.3s;
   cursor: pointer;
 }
+
+nav .nav_actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 nav .menuBtn {
   padding: 8px 20px;
   color: black;
   background: transparent;
   border: 1px solid #333;
-  border-radius: 20px;
+  border-radius: 8px;
   font-size: 16px;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
+
 nav .menuBtn:hover {
   color: #fff;
   background: #222;
   transition: 0.3s;
   cursor: pointer;
 }
-.cart_icon {
+
+nav .cart_icon {
   position: relative;
   font-size: 1.5rem;
   color: #111;
   text-decoration: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: 0.3s;
 }
-.cart_icon:hover {
+
+nav .cart_icon:hover {
   color: #333;
 }
-.cart_badge {
+
+nav .cart_badge {
   position: absolute;
   top: -8px;
   right: -8px;
@@ -109,33 +138,139 @@ nav .menuBtn:hover {
   font-size: 12px;
   font-weight: bold;
 }
-.order_history_link {
+
+nav .auth_buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+nav .user_info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav .user_name {
+  font-size: 16px;
+  color: #333;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+nav .order_history_link {
   padding: 6px 15px;
-  border-radius: 20px;
+  border-radius: 8px;
   font-size: 14px;
   text-decoration: none;
   color: #111;
   background: transparent;
   border: 1px solid #333;
   transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
-.order_history_link:hover {
+
+nav .order_history_link:hover {
   color: #fff;
   background: #222;
   border-color: #222;
 }
+
+nav .admin_link {
+  padding: 6px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+  background: #8b5cf6;
+  border: 1px solid #8b5cf6;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+nav .admin_link:hover {
+  background: #7c3aed;
+  border-color: #7c3aed;
+}
+
+nav .logoutBtn {
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111;
+  background: transparent;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+nav .logoutBtn:hover {
+  color: #fff;
+  background: #222;
+  border-color: #222;
+}
+
+nav .loginBtn,
+nav .signupBtn {
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+nav .loginBtn {
+  color: #111;
+  border: 1px solid #333;
+  background: transparent;
+}
+
+nav .loginBtn:hover {
+  color: #fff;
+  background: #222;
+  border-color: #222;
+}
+
+nav .signupBtn {
+  color: #fff;
+  background: #111;
+  border: 1px solid #111;
+}
+
+nav .signupBtn:hover {
+  background: #333;
+  border-color: #333;
+}
+
 nav .hamburger {
   display: none;
 }
+
 nav svg {
   font-size: 1.75rem;
 }
+
 @media (max-width: 1520px) {
   nav {
     min-width: 100%;
     padding: 25px 20px 40px 20px;
   }
 }
+
 @media (max-width: 1100px) {
   nav {
     z-index: 20;
@@ -143,13 +278,16 @@ nav svg {
     background: #ffffff63;
     padding: 10px 30px;
   }
+
   nav::after {
     content: "";
     display: none;
   }
+
   nav .hamburger {
     display: flex;
   }
+
   nav .navLinks {
     position: absolute;
     display: flex;
@@ -162,6 +300,7 @@ nav svg {
     z-index: -1;
     transition: 0.3s;
   }
+
   nav .showmenu {
     position: absolute;
     display: flex;
@@ -178,24 +317,29 @@ nav svg {
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
   }
+
   nav .showmenu .links {
     flex-direction: column;
     text-align: center;
   }
+
   nav .menuBtn {
     margin-top: 20px;
   }
+
   nav .nav_actions {
     flex-direction: column;
     gap: 10px;
     margin-top: 15px;
   }
+
   nav .auth_buttons,
   nav .user_info {
     flex-direction: column;
     width: 100%;
     gap: 10px;
   }
+
   nav .loginBtn,
   nav .signupBtn,
   nav .logoutBtn {
@@ -203,11 +347,13 @@ nav svg {
     text-align: center;
   }
 }
+
 @media (max-width: 800px) {
   nav .showmenu {
     width: 96vw;
   }
 }
+
 @media (max-width: 650px) {
   nav .showmenu {
     margin: 0;
@@ -215,6 +361,7 @@ nav svg {
     border-radius: 0;
   }
 }
+
 /**********************************************************************************************************************/
 
 /********************** HERO SECTION COMPONENT STYLING **************************/
@@ -231,57 +378,72 @@ nav svg {
   background-position: right;
   padding: 0 15px;
 }
+
 .heroSection .container {
   display: flex;
   max-width: 1200px;
   min-width: 1200px;
 }
+
 .heroSection .container .banner:first-child {
   flex: 2;
   display: flex;
   flex-wrap: wrap;
 }
+
 .heroSection .container .banner .largeBox {
   width: 100%;
 }
+
 .heroSection .container .banner .combined_boxes {
   display: flex;
   width: 100%;
 }
+
 .heroSection .container .banner .title {
   font-size: 8.5rem;
   font-weight: 200;
 }
+
 .heroSection .container .banner .textAndLogo {
   width: 50%;
 }
+
 .heroSection .container .banner .textWithSvg {
   position: relative;
 }
+
 .heroSection .container .banner .textWithSvg img {
   position: absolute;
   right: 0;
   top: 0;
 }
+
 .heroSection .container .banner:first-child .dishes_title {
   display: none;
 }
+
 .heroSection .container .banner:first-child .imageBox {
   width: 50%;
 }
+
 .heroSection .container .banner:last-child .imageBox {
   width: 100%;
 }
+
 .heroSection .container .banner .imageBox img {
   width: 300px;
   height: 385px;
 }
+
 .heroSection .container .banner:last-child .imageBox {
   text-align: end;
 }
+
 .heroSection .container .banner:last-child {
   flex: 1;
 }
+
 @media (max-width: 1280px) {
   .heroSection .container {
     width: 100%;
@@ -289,101 +451,127 @@ nav svg {
     padding: 30px 20px;
   }
 }
+
 @media (max-width: 1072px) {
   .heroSection .container .banner .title {
     font-size: 6.5rem;
   }
+
   .heroSection .container .banner .imageBox img {
     width: 250px;
     height: 335px;
   }
 }
+
 @media (max-width: 880px) {
   .heroSection .container .banner .title {
     font-size: 6rem;
   }
+
   .heroSection .container .banner .imageBox img {
     width: 250px;
     height: 265px;
   }
 }
+
 @media (max-width: 830px) {
   .heroSection .container .banner:last-child .imageBox {
     height: 350px;
   }
+
   .heroSection .container .banner:last-child .imageBox img {
     display: none;
   }
+
   .heroSection .container .banner .combined_boxes {
     flex-direction: column-reverse;
   }
+
   .heroSection .container .banner .textAndLogo {
     width: 100%;
     text-align: end;
   }
+
   .heroSection .container .banner .textAndLogo .title,
   .heroSection .container .banner .textAndLogo .logo {
-    margin-right: 60px;
+    margin-right: 70px;
+    margin-left: 20px;
   }
+
   .heroSection .container .banner:last-child .dishes_title {
     margin-top: 65px;
   }
+
   .heroSection .container .banner .imageBox img {
     width: 100%;
   }
 }
+
 @media (max-width: 720px) {
   .heroSection .container .banner .title {
     font-size: 4.5rem;
   }
 }
+
 @media (max-width: 520px) {
   .heroSection .container .banner:last-child .dishes_title {
     display: none;
   }
+
   .heroSection .container .banner:first-child .dishes_title {
     display: block;
   }
+
   .heroSection .container .banner:first-child {
     width: 100%;
   }
+
   .heroSection .container .banner:last-child {
     display: none;
   }
+
   .heroSection .container .banner .title {
     text-align: center;
   }
+
   .heroSection .container .banner .textAndLogo .title,
   .heroSection .container .banner .textAndLogo .logo {
     margin-right: 0;
   }
+
   .heroSection .container .banner .textWithSvg {
     width: fit-content;
     margin: 0 auto;
   }
+
   .heroSection .container .banner .textAndLogo {
     text-align: center;
   }
+
   .heroSection .container .banner:first-child .imageBox {
     width: 100%;
     text-align: center;
   }
+
   .heroSection .container .banner:first-child .imageBox img {
     width: 290px;
     height: 350px;
   }
 }
-@media(max-width: 650px){
-  .heroSection{
+
+@media(max-width: 650px) {
+  .heroSection {
     padding: 0;
   }
 }
+
 @media (max-width: 330px) {
   .heroSection .container .banner:first-child .imageBox img {
     width: 100%;
     height: auto;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* ABOUT US COMPONENT STYLING **************/
@@ -395,25 +583,30 @@ nav svg {
   align-items: center;
   background-color: #f9fbf2;
 }
+
 .about .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
 }
+
 .about .container .banner {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .about .container .banner img {
   width: 100%;
 }
+
 .heading {
   font-weight: 200;
   font-size: 4rem;
   color: #111;
 }
+
 .about .container .banner .mid {
   width: 65%;
   font-size: 18px;
@@ -421,12 +614,14 @@ nav svg {
   letter-spacing: 2px;
   word-spacing: 5px;
 }
+
 .about .container .banner .top p {
   font-size: 18px;
   font-weight: 400;
   color: #111;
   letter-spacing: 2px;
 }
+
 .about .container .banner a {
   border: 1px solid black;
   padding: 8px 28px;
@@ -439,6 +634,7 @@ nav svg {
   font-size: 15px;
   color: #111;
 }
+
 .about .container .banner a span {
   margin-left: 1rem;
   padding: 6px;
@@ -446,55 +642,67 @@ nav svg {
   border-radius: 100%;
   color: #fff;
 }
+
 .about .container .banner a:hover {
   color: #fff;
   background: #111;
   transition: ease-in-out 0.3s;
 }
+
 .about .container .banner a:hover span {
   background: #fff;
   color: #111;
 }
+
 @media (max-width: 1520px) {
   .about {
     padding: 30px 20px;
   }
+
   .about .container {
     min-width: fit-content;
   }
 }
+
 @media (max-width: 1050px) {
   .about .container .banner:first-child {
     padding-right: 30px;
   }
+
   .about .container .banner .mid {
     width: 100%;
     margin: 20px 0;
   }
 }
+
 @media (max-width: 786px) {
   .about .container {
     flex-direction: column-reverse;
   }
+
   .about .container .banner img {
     width: 400px;
     margin: 0 auto;
     margin-bottom: 40px;
   }
+
   .about .container .banner:first-child {
     padding: 0;
   }
 }
+
 @media (max-width: 530px) {
   .heading {
     font-size: 3rem;
   }
 }
+
 @media (max-width: 450px) {
   .about .container .banner img {
     width: 100%;
   }
 }
+
 /**********************************************************************************************************************/
 
 /* QUALITIES COMPONENT STYLING */
@@ -506,12 +714,14 @@ nav svg {
   justify-content: center;
   align-items: center;
 }
+
 .qualities .container {
   min-width: 1500px;
   max-width: 1500px;
   display: flex;
   flex-wrap: wrap;
 }
+
 .qualities .container .card {
   flex: 1;
   display: flex;
@@ -520,39 +730,47 @@ nav svg {
   text-align: center;
   padding: 0 100px;
 }
+
 .qualities .container .card img {
   margin-bottom: 25px;
 }
+
 .qualities .container .card .title {
   font-size: 1.8rem;
   font-weight: 700;
   color: #111;
   margin-bottom: 12px;
 }
+
 .qualities .container .card .description {
   font-size: 18px;
   color: #333;
   font-weight: 300;
 }
+
 @media (max-width: 1520px) {
   .qualities .container {
     min-width: 100%;
     padding: 30px 20px;
   }
 }
+
 @media (max-width: 1190px) {
   .qualities .container .card .title {
     font-size: 1.4rem;
   }
 }
+
 @media (max-width: 1080px) {
   .qualities .container .card {
     padding: 0 30px;
   }
+
   .qualities .container {
     padding: 0;
   }
 }
+
 @media (max-width: 635px) {
   .qualities .container .card {
     flex: none;
@@ -562,11 +780,13 @@ nav svg {
     margin-bottom: 40px;
   }
 }
+
 @media (max-width: 485px) {
   .qualities .container .card {
     width: 100%;
   }
 }
+
 /*********************************************************************************************************************/
 
 /* MENU COMPONENT STYLING */
@@ -578,6 +798,7 @@ nav svg {
   align-items: center;
   padding: 50px 20px;
 }
+
 .menu .container {
   max-width: 1500px;
   min-width: 1500px;
@@ -585,19 +806,23 @@ nav svg {
   flex-direction: column;
   align-items: center;
 }
+
 .menu .container .heading_section {
   text-align: center;
   margin-bottom: 12px;
 }
+
 .menu .container .heading_section p {
   color: #333;
   font-size: 18px;
   font-weight: 300;
 }
+
 .menu .container .dishes_container {
   display: flex;
   flex-wrap: wrap;
 }
+
 .menu .container .dishes_container .card {
   width: 25%;
   position: relative;
@@ -605,16 +830,19 @@ nav svg {
   margin-bottom: 12px;
   position: relative;
 }
+
 .menu .container .dishes_container .card img {
   width: 100%;
   height: 370px;
   object-fit: cover;
   border-radius: 5px;
 }
+
 .menu .container .dishes_container .card h3 {
   font-size: 1.5rem;
   font-weight: 500;
 }
+
 .menu .container .dishes_container .card button {
   position: absolute;
   top: 40px;
@@ -626,45 +854,55 @@ nav svg {
   border-radius: 20px;
   font-size: 16px;
 }
+
 .menu .container .dishes_container .card:hover img {
   transition: 0.3s;
   transform: scale(1.03);
 }
+
 @media (max-width: 1520px) {
   .menu .container {
     min-width: 100%;
   }
 }
+
 @media (max-width: 1200px) {
   .menu .container .dishes_container .card img {
     height: 325px;
   }
+
   .menu .container .dishes_container .card h3 {
     font-size: 1.3rem;
   }
 }
+
 @media (max-width: 1000px) {
   .menu .container .dishes_container .card {
     width: 50%;
   }
+
   .menu .container .dishes_container .card img {
     height: auto;
   }
+
   .menu .container .dishes_container .card h3 {
     font-size: 1.6rem;
   }
 }
+
 @media (max-width: 600px) {
   .menu .container .dishes_container .card h3 {
     font-size: 1.2rem;
   }
 }
+
 @media (max-width: 450px) {
   .menu .container .dishes_container .card {
     width: 100%;
     padding: 20px 0;
   }
 }
+
 /*********************************************************************************************************************/
 
 /* TEAM COMPONENT STYLING */
@@ -676,6 +914,7 @@ nav svg {
   align-items: center;
   padding: 20px;
 }
+
 .team .container {
   max-width: 1500px;
   min-width: 1500px;
@@ -683,21 +922,25 @@ nav svg {
   flex-direction: column;
   align-items: center;
 }
+
 .team .container .heading_section {
   text-align: center;
   margin-bottom: 12px;
 }
+
 .team .container .heading_section p {
   color: #333;
   font-size: 18px;
   font-weight: 300;
   margin-bottom: 1.5rem;
 }
+
 .team .container .team_container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
+
 .team .container .team_container .card {
   width: 25%;
   padding: 20px;
@@ -706,49 +949,60 @@ nav svg {
   flex-direction: column;
   align-items: center;
 }
+
 .team .container .team_container .card img {
   width: 175px;
   margin-bottom: 1rem;
 }
+
 .team .container .team_container .card h3 {
   font-size: 1.5rem;
 }
+
 .team .container .team_container .card p {
   font-size: 18px;
   font-weight: 300;
   color: #333;
 }
+
 @media (max-width: 1520px) {
   .team .container {
     min-width: 100%;
   }
 }
+
 @media (max-width: 1050px) {
   .team .container .team_container .card img {
     width: 135px;
   }
 }
+
 @media (max-width: 910px) {
   .team .container .team_container .card h3 {
     font-size: 1.3rem;
   }
 }
+
 @media (max-width: 810px) {
   .team .container .team_container .card {
     width: 50%;
   }
+
   .team .container .team_container .card img {
     width: 220px;
   }
 }
+
 @media (max-width: 550px) {
   .team .container .team_container .card {
     width: 100%;
   }
+
   .team .container .team_container .card img {
     width: 150px;
   }
 }
+
 /*********************************************************************************************************************/
 
 /* WHOAREWE COMPONENT STYLING */
@@ -759,16 +1013,19 @@ nav svg {
   align-items: center;
   min-height: 80vh;
 }
+
 .who_are_we .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
 }
+
 .who_are_we .container .text_banner {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+
 .who_are_we .container .text_banner .card {
   display: flex;
   flex-direction: column;
@@ -777,65 +1034,79 @@ nav svg {
   gap: 15px;
   justify-content: center;
 }
+
 .who_are_we .container .text_banner .card p {
   color: #333;
   font-size: 25px;
   font-weight: 200;
 }
+
 .who_are_we .container .image_banner {
   position: relative;
   flex: 2;
   display: flex;
   justify-content: center;
 }
+
 .who_are_we .container .image_banner img {
   width: 500px;
   height: 635px;
 }
+
 .who_are_we .container .image_banner .gradient_bg {
   position: absolute;
   left: -80px;
   top: 0;
 }
+
 @media (max-width: 1520px) {
   .who_are_we .container {
     min-width: 100%;
     padding: 20px;
   }
 }
+
 @media (max-width: 1180px) {
   .who_are_we .container .image_banner img {
     height: 100%;
     width: 100%;
   }
 }
+
 @media (max-width: 700px) {
   .who_are_we .container .image_banner {
     order: -1;
     margin-bottom: 2rem;
   }
+
   .who_are_we .container .text_banner {
     flex-direction: row;
   }
+
   .who_are_we .container {
     flex-direction: column;
   }
+
   .who_are_we .container .image_banner img {
     width: 400px;
   }
+
   .who_are_we .container .text_banner .card {
     width: 50%;
   }
 }
+
 @media (max-width: 400px) {
   .who_are_we .container .text_banner {
     flex-direction: column;
   }
+
   .who_are_we .container .text_banner .card {
     width: 100%;
     margin-bottom: 1.2rem;
   }
 }
+
 /*********************************************************************************************************************/
 
 /******************* NOT FOUND PAGE STYLING **************/
@@ -849,21 +1120,25 @@ footer {
   padding: 15px 20px 8px 20px;
   margin-top: auto;
 }
+
 footer .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
   flex-direction: column;
 }
+
 footer .container .banner {
   display: flex;
   justify-content: space-between;
 }
+
 footer .container .banner:first-child {
   padding-bottom: 15px;
   margin-bottom: 12px;
   position: relative;
 }
+
 footer .container .banner:first-child::after {
   content: "";
   position: absolute;
@@ -872,47 +1147,57 @@ footer .container .banner:first-child::after {
   height: 2px;
   background: #111;
 }
+
 footer .container .banner:first-child .left {
   font-size: 1.4rem;
 }
+
 footer .container .banner:last-child .left {
   font-size: 14px;
   color: #333;
 }
+
 footer .container .banner:last-child .left a {
   color: #333;
 }
+
 footer .container .banner:last-child .left a:hover {
   color: #111;
   transition: 0.3s;
   font-weight: bold;
 }
+
 footer .container .banner .right {
   text-align: end;
   font-size: 14px;
   color: #333;
 }
+
 @media (max-width: 1520px) {
   footer .container {
     min-width: 100%;
     padding: 0 20px;
   }
 }
+
 @media (max-width: 530px) {
   footer .container .banner:first-child {
     flex-direction: column;
     gap: 15px;
   }
+
   footer .container .banner:first-child .left,
   footer .container .banner .right {
     text-align: center;
   }
+
   footer .container .banner {
     flex-direction: column;
     text-align: center;
     gap: 7px;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* RESERVATION COMPONENT STYLING **************/
@@ -928,15 +1213,18 @@ footer .container .banner .right {
   background-size: cover;
   background-position: right;
 }
+
 .reservation .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
 }
+
 .reservation .container .banner {
   width: 50%;
   padding: 50px;
 }
+
 .reservation .container .banner .reservation_form_box {
   width: 400px;
   background: #fff;
@@ -946,11 +1234,13 @@ footer .container .banner .right {
   -webkit-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
   -moz-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
 }
+
 .reservation .container .banner .reservation_form_box form div {
   display: flex;
   gap: 25px;
   margin-bottom: 20px;
 }
+
 .reservation .container .banner .reservation_form_box form div input {
   flex: 1;
   padding: 5px;
@@ -960,12 +1250,8 @@ footer .container .banner .right {
   border-bottom: 1px solid #333;
   background: transparent;
 }
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  input[type="email"] {
+
+.reservation .container .banner .reservation_form_box form input[type="email"] {
   width: 100%;
   margin-bottom: 20px;
   padding: 5px;
@@ -975,12 +1261,8 @@ footer .container .banner .right {
   border-bottom: 1px solid #555;
   background: transparent;
 }
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  input[type="number"] {
+
+.reservation .container .banner .reservation_form_box form input[type="number"] {
   width: 100%;
   margin-bottom: 20px;
   padding: 5px;
@@ -990,37 +1272,25 @@ footer .container .banner .right {
   border-bottom: 1px solid #333;
   background: transparent;
 }
+
 .reservation .container .banner .reservation_form_box form div input:focus,
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  input[type="number"]:focus,
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  input[type="email"]:focus {
+.reservation .container .banner .reservation_form_box form input[type="number"]:focus,
+.reservation .container .banner .reservation_form_box form input[type="email"]:focus {
   outline: none;
   border-bottom: 2px solid skyblue;
 }
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  div
-  input::placeholder {
+
+.reservation .container .banner .reservation_form_box form div input::placeholder {
   color: #222;
 }
+
 .reservation .container .banner .reservation_form_box h1 {
   font-weight: 200;
   font-size: 2.75rem;
   color: #111;
   text-align: center;
 }
+
 .reservation .container .banner .reservation_form_box p {
   color: #333;
   font-size: 18px;
@@ -1028,13 +1298,16 @@ footer .container .banner .right {
   text-align: center;
   margin-bottom: 30px;
 }
+
 .reservation .container .banner:first-child {
   display: flex;
   justify-content: center;
 }
+
 .reservation .container .banner img {
   width: 550px;
 }
+
 .reservation .container .banner .reservation_form_box form button {
   border: 1px solid black;
   padding: 8px 36px;
@@ -1050,6 +1323,7 @@ footer .container .banner .right {
   background: transparent;
   margin-top: 30px;
 }
+
 .reservation .container .banner .reservation_form_box form button span {
   margin-left: 1rem;
   padding: 3px;
@@ -1057,53 +1331,64 @@ footer .container .banner .right {
   border-radius: 100%;
   color: #fff;
 }
+
 @media (max-width: 1520px) {
   .reservation .container {
     min-width: 100%;
   }
 }
+
 @media (max-width: 1040px) {
   .reservation .container .banner {
     padding: 20px;
   }
 }
+
 @media (max-width: 1350px) {
   .reservation .container .banner img {
     width: 42vw;
   }
 }
+
 @media (max-width: 885px) {
   .reservation .container {
     flex-direction: column;
     gap: 30px;
   }
+
   .reservation .container .banner img {
     width: 70vw;
   }
+
   .reservation .container .banner {
     width: 100%;
     display: flex;
     justify-content: center;
   }
 }
+
 @media (max-width: 660px) {
   .reservation .container .banner img {
     width: 100%;
   }
 }
+
 @media (max-width: 450px) {
   .reservation .container .banner .reservation_form_box {
     width: 100%;
   }
+
   .reservation .container .banner .reservation_form_box h1 {
     font-size: 2rem;
   }
 }
+
 @media (max-width: 325px) {
   .reservation .container .banner .reservation_form_box h1 {
     font-size: 1.6rem;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* AUTH PAGES STYLING **************/
@@ -1119,15 +1404,18 @@ footer .container .banner .right {
   background-size: cover;
   background-position: right;
 }
+
 .auth .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
 }
+
 .auth .container .banner {
   width: 50%;
   padding: 50px;
 }
+
 .auth .container .banner .auth_form_box {
   width: 400px;
   background: #fff;
@@ -1137,11 +1425,13 @@ footer .container .banner .right {
   -webkit-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
   -moz-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
 }
+
 .auth .container .banner .auth_form_box form div {
   display: flex;
   gap: 25px;
   margin-bottom: 20px;
 }
+
 .auth .container .banner .auth_form_box form div input {
   flex: 1;
   padding: 5px;
@@ -1151,6 +1441,7 @@ footer .container .banner .right {
   border-bottom: 1px solid #333;
   background: transparent;
 }
+
 .auth .container .banner .auth_form_box form input[type="email"],
 .auth .container .banner .auth_form_box form input[type="password"] {
   width: 100%;
@@ -1162,19 +1453,23 @@ footer .container .banner .right {
   border-bottom: 1px solid #555;
   background: transparent;
 }
+
 .auth .container .banner .auth_form_box form input:focus {
   outline: none;
   border-bottom: 2px solid skyblue;
 }
+
 .auth .container .banner .auth_form_box form input::placeholder {
   color: #222;
 }
+
 .auth .container .banner .auth_form_box h1 {
   font-weight: 200;
   font-size: 2.75rem;
   color: #111;
   text-align: center;
 }
+
 .auth .container .banner .auth_form_box p {
   color: #333;
   font-size: 18px;
@@ -1182,13 +1477,16 @@ footer .container .banner .right {
   text-align: center;
   margin-bottom: 30px;
 }
+
 .auth .container .banner:first-child {
   display: flex;
   justify-content: center;
 }
+
 .auth .container .banner img {
   width: 550px;
 }
+
 .auth .container .banner .auth_form_box form button {
   border: 1px solid black;
   padding: 8px 36px;
@@ -1205,6 +1503,7 @@ footer .container .banner .right {
   margin-top: 30px;
   cursor: pointer;
 }
+
 .auth .container .banner .auth_form_box form button span {
   margin-left: 1rem;
   padding: 3px;
@@ -1212,21 +1511,25 @@ footer .container .banner .right {
   border-radius: 100%;
   color: #fff;
 }
+
 .auth .container .banner .auth_form_box form button:hover {
   color: #fff;
   background: #111;
   transition: ease-in-out 0.3s;
 }
+
 .auth .container .banner .auth_form_box form button:hover span {
   background: #fff;
   color: #111;
 }
+
 .auth_link {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
   color: #333;
 }
+
 .auth_link a,
 .auth_link .link_button {
   color: #111;
@@ -1238,132 +1541,68 @@ footer .container .banner .right {
   font-size: 14px;
   padding: 0;
 }
+
 .auth_link a:hover,
 .auth_link .link_button:hover {
   text-decoration: underline;
 }
-.nav_actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.auth_buttons {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.loginBtn,
-.signupBtn {
-  padding: 6px 18px;
-  border-radius: 20px;
-  font-size: 14px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.loginBtn {
-  color: #111;
-  border: 1px solid #333;
-  background: transparent;
-}
-.loginBtn:hover {
-  color: #fff;
-  background: #222;
-  border-color: #222;
-}
-.signupBtn {
-  color: #fff;
-  background: #111;
-  border: 1px solid #111;
-}
-.signupBtn:hover {
-  background: #333;
-  border-color: #333;
-}
-.user_info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.user_name {
-  font-size: 16px;
-  color: #333;
-  font-weight: 400;
-}
-.admin_link {
-  padding: 6px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  text-decoration: none;
-  color: #fff;
-  background: #8b5cf6;
-  border: 1px solid #8b5cf6;
-  transition: 0.3s;
-}
-.admin_link:hover {
-  background: #7c3aed;
-  border-color: #7c3aed;
-}
-.logoutBtn {
-  padding: 6px 18px;
-  border-radius: 20px;
-  font-size: 14px;
-  color: #111;
-  background: transparent;
-  border: 1px solid #333;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.logoutBtn:hover {
-  color: #fff;
-  background: #222;
-  border-color: #222;
-}
+
 @media (max-width: 1520px) {
   .auth .container {
     min-width: 100%;
   }
 }
+
 @media (max-width: 1040px) {
   .auth .container .banner {
     padding: 20px;
   }
 }
+
 @media (max-width: 1350px) {
   .auth .container .banner img {
     width: 42vw;
   }
 }
+
 @media (max-width: 885px) {
   .auth .container {
     flex-direction: column;
     gap: 30px;
   }
+
   .auth .container .banner img {
     width: 70vw;
   }
+
   .auth .container .banner {
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  .nav_actions {
+
+  nav .nav_actions {
     flex-direction: column;
     gap: 10px;
   }
 }
+
 @media (max-width: 660px) {
   .auth .container .banner img {
     width: 100%;
   }
 }
+
 @media (max-width: 450px) {
   .auth .container .banner .auth_form_box {
     width: 100%;
   }
+
   .auth .container .banner .auth_form_box h1 {
     font-size: 2rem;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* ADMIN DASHBOARD STYLING **************/
@@ -1376,38 +1615,45 @@ footer .container .banner .right {
   padding: 50px 20px;
   background: #f9fbf2;
 }
+
 .adminDashboard .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
   flex-direction: column;
 }
+
 .adminDashboard .heading {
   text-align: center;
   margin-bottom: 40px;
 }
+
 .dashboard_content {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+
 .welcome_box {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .welcome_box h2 {
   font-size: 2rem;
   font-weight: 400;
   color: #111;
   margin-bottom: 15px;
 }
+
 .welcome_box p {
   font-size: 1.1rem;
   color: #333;
   margin-bottom: 10px;
 }
+
 .dashboard_info {
   background: #fff;
   padding: 30px;
@@ -1415,16 +1661,19 @@ footer .container .banner .right {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
 .dashboard_info p {
   font-size: 1.2rem;
   color: #666;
 }
+
 .dashboard_actions {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 20px;
 }
+
 .dashboard_link {
   border: 1px solid black;
   padding: 12px 28px;
@@ -1438,10 +1687,12 @@ footer .container .banner .right {
   color: #111;
   transition: ease-in-out 0.3s;
 }
+
 .dashboard_link:hover {
   color: #fff;
   background: #111;
 }
+
 .dashboard_link span {
   margin-left: 1rem;
   padding: 6px;
@@ -1449,15 +1700,18 @@ footer .container .banner .right {
   border-radius: 100%;
   color: #fff;
 }
+
 .dashboard_link:hover span {
   background: #fff;
   color: #111;
 }
+
 @media (max-width: 1520px) {
   .adminDashboard .container {
     min-width: 100%;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* CART PAGE STYLING **************/
@@ -1470,16 +1724,19 @@ footer .container .banner .right {
   padding: 50px 20px;
   background: #f9fbf2;
 }
+
 .cart .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
   flex-direction: column;
 }
+
 .cart .heading {
   text-align: center;
   margin-bottom: 40px;
 }
+
 .empty_cart {
   text-align: center;
   padding: 60px 20px;
@@ -1487,11 +1744,13 @@ footer .container .banner .right {
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .empty_cart p {
   font-size: 1.5rem;
   color: #666;
   margin-bottom: 30px;
 }
+
 .back_to_menu_btn {
   border: 1px solid black;
   padding: 12px 28px;
@@ -1504,23 +1763,28 @@ footer .container .banner .right {
   color: #111;
   transition: ease-in-out 0.3s;
 }
+
 .back_to_menu_btn:hover {
   color: #fff;
   background: #111;
 }
+
 .back_to_menu_btn svg {
   margin-left: 10px;
 }
+
 .cart_content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 40px;
 }
+
 .cart_items {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .cart_item {
   background: #fff;
   padding: 20px;
@@ -1530,31 +1794,37 @@ footer .container .banner .right {
   gap: 20px;
   align-items: center;
 }
+
 .cart_item img {
   width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 10px;
 }
+
 .cart_item_info {
   flex: 1;
 }
+
 .cart_item_info h3 {
   font-size: 1.3rem;
   font-weight: 500;
   color: #111;
   margin-bottom: 8px;
 }
+
 .cart_item_price {
   font-size: 1rem;
   color: #666;
   margin-bottom: 15px;
 }
+
 .cart_item_actions {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 .cart_item_actions .quantity_controls {
   display: flex;
   align-items: center;
@@ -1563,6 +1833,7 @@ footer .container .banner .right {
   border-radius: 5px;
   padding: 5px 10px;
 }
+
 .cart_item_actions .quantity_controls button {
   background: transparent;
   border: none;
@@ -1577,15 +1848,18 @@ footer .container .banner .right {
   border-radius: 50%;
   transition: 0.3s;
 }
+
 .cart_item_actions .quantity_controls button:hover {
   background: #f0f0f0;
 }
+
 .cart_item_actions .quantity_controls span {
   font-size: 1rem;
   font-weight: 500;
   min-width: 25px;
   text-align: center;
 }
+
 .remove_btn {
   padding: 6px 15px;
   border-radius: 20px;
@@ -1596,15 +1870,18 @@ footer .container .banner .right {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .remove_btn:hover {
   color: #fff;
   background: #ff4444;
 }
+
 .cart_item_total {
   font-size: 1.5rem;
   font-weight: 600;
   color: #111;
 }
+
 .order_summary {
   background: #fff;
   padding: 30px;
@@ -1614,21 +1891,25 @@ footer .container .banner .right {
   position: sticky;
   top: 20px;
 }
+
 .order_summary h2 {
   font-size: 1.8rem;
   font-weight: 400;
   color: #111;
   margin-bottom: 25px;
 }
+
 .shipping_form {
   margin-bottom: 25px;
 }
+
 .shipping_form h3 {
   font-size: 1.2rem;
   font-weight: 400;
   color: #111;
   margin-bottom: 15px;
 }
+
 .shipping_form input {
   width: 100%;
   padding: 10px;
@@ -1639,15 +1920,18 @@ footer .container .banner .right {
   border-bottom: 1px solid #333;
   background: transparent;
 }
+
 .shipping_form input:focus {
   outline: none;
   border-bottom: 2px solid skyblue;
 }
+
 .total_section {
   border-top: 2px solid #333;
   padding-top: 20px;
   margin-bottom: 25px;
 }
+
 .total_row {
   display: flex;
   justify-content: space-between;
@@ -1655,11 +1939,13 @@ footer .container .banner .right {
   font-size: 1.1rem;
   color: #333;
 }
+
 .total_amount {
   font-size: 1.5rem;
   font-weight: 600;
   color: #111;
 }
+
 .place_order_btn {
   border: 1px solid black;
   padding: 12px 36px;
@@ -1675,14 +1961,17 @@ footer .container .banner .right {
   cursor: pointer;
   transition: ease-in-out 0.3s;
 }
+
 .place_order_btn:hover:not(:disabled) {
   color: #fff;
   background: #111;
 }
+
 .place_order_btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
 .place_order_btn span {
   margin-left: 1rem;
   padding: 3px;
@@ -1690,23 +1979,28 @@ footer .container .banner .right {
   border-radius: 100%;
   color: #fff;
 }
+
 .place_order_btn:hover:not(:disabled) span {
   background: #fff;
   color: #111;
 }
+
 @media (max-width: 1520px) {
   .cart .container {
     min-width: 100%;
   }
 }
+
 @media (max-width: 1200px) {
   .cart_content {
     grid-template-columns: 1fr;
   }
+
   .order_summary {
     position: static;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* ADMIN ORDERS & ORDER HISTORY STYLING **************/
@@ -1720,6 +2014,7 @@ footer .container .banner .right {
   padding: 50px 20px;
   background: #f9fbf2;
 }
+
 .adminOrders .container,
 .orderHistory .container {
   max-width: 1500px;
@@ -1727,11 +2022,13 @@ footer .container .banner .right {
   display: flex;
   flex-direction: column;
 }
+
 .adminOrders .heading,
 .orderHistory .heading {
   text-align: center;
   margin-bottom: 40px;
 }
+
 .no_orders {
   text-align: center;
   padding: 60px 20px;
@@ -1739,21 +2036,25 @@ footer .container .banner .right {
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .no_orders p {
   font-size: 1.5rem;
   color: #666;
 }
+
 .orders_list {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+
 .order_card {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .order_header {
   display: flex;
   justify-content: space-between;
@@ -1762,31 +2063,37 @@ footer .container .banner .right {
   padding-bottom: 20px;
   border-bottom: 2px solid #f0f0f0;
 }
+
 .order_header h3 {
   font-size: 1.5rem;
   font-weight: 500;
   color: #111;
   margin-bottom: 8px;
 }
+
 .order_date {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 5px;
 }
+
 .customer_info {
   font-size: 1rem;
   color: #333;
   margin-bottom: 5px;
 }
+
 .order_total {
   text-align: right;
 }
+
 .order_total p {
   font-size: 1.5rem;
   font-weight: 600;
   color: #111;
   margin-bottom: 10px;
 }
+
 .status_badge {
   display: inline-block;
   padding: 6px 15px;
@@ -1795,31 +2102,53 @@ footer .container .banner .right {
   font-weight: 500;
   text-transform: uppercase;
 }
+
 .status_pending {
   background: #fff3cd;
   color: #856404;
 }
+
 .status_delivered {
   background: #d4edda;
   color: #155724;
 }
+
 .status_returned {
   background: #f8d7da;
   color: #721c24;
 }
+
 .status_out_of_ingredients {
   background: #ffeaa7;
   color: #856404;
 }
+
+.status_confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status_cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status_completed {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
 .order_items {
   margin-bottom: 25px;
 }
+
 .order_items h4 {
   font-size: 1.2rem;
   font-weight: 400;
   color: #111;
   margin-bottom: 15px;
 }
+
 .order_item {
   display: flex;
   gap: 15px;
@@ -1829,39 +2158,46 @@ footer .container .banner .right {
   border-radius: 8px;
   margin-bottom: 10px;
 }
+
 .order_item img {
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 8px;
 }
+
 .order_item_info p {
   font-size: 1rem;
   color: #333;
   margin-bottom: 5px;
 }
+
 .shipping_info {
   margin-bottom: 25px;
   padding: 15px;
   background: #f9f9f9;
   border-radius: 8px;
 }
+
 .shipping_info h4 {
   font-size: 1.1rem;
   font-weight: 400;
   color: #111;
   margin-bottom: 10px;
 }
+
 .shipping_info p {
   font-size: 1rem;
   color: #333;
   margin-bottom: 5px;
 }
+
 .order_actions {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
 }
+
 .status_btn {
   padding: 10px 25px;
   border-radius: 25px;
@@ -1873,48 +2209,240 @@ footer .container .banner .right {
   flex: 1;
   min-width: 150px;
 }
+
 .status_btn.delivered {
   background: #28a745;
   color: #fff;
 }
+
 .status_btn.delivered:hover {
   background: #218838;
 }
+
 .status_btn.returned {
   background: #dc3545;
   color: #fff;
 }
+
 .status_btn.returned:hover {
   background: #c82333;
 }
+
 .status_btn.out_of_ingredients {
   background: #ffc107;
   color: #000;
 }
+
 .status_btn.out_of_ingredients:hover {
   background: #e0a800;
 }
+
 @media (max-width: 1520px) {
+
   .adminOrders .container,
   .orderHistory .container {
     min-width: 100%;
   }
 }
+
 @media (max-width: 768px) {
   .order_header {
     flex-direction: column;
     gap: 15px;
   }
+
   .order_total {
     text-align: left;
   }
+
   .order_actions {
     flex-direction: column;
   }
+
   .status_btn {
     width: 100%;
   }
 }
+
+/**********************************************************************************************************************/
+
+/******************* ADMIN RESERVATIONS STYLING **************/
+/**********************************************************************************************************************/
+.adminReservations {
+  display: flex;
+  min-height: calc(100vh - 200px);
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  background: #f9fbf2;
+}
+
+.adminReservations .container {
+  max-width: 1500px;
+  min-width: 1500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminReservations .heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.no_reservations {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.no_reservations p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.reservations_list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.reservation_card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.reservation_header h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.reservation_date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.customer_info {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.reservation_details {
+  text-align: right;
+}
+
+.reservation_time {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.reservation_actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.status_btn.confirmed {
+  background: #28a745;
+  color: #fff;
+}
+
+.status_btn.confirmed:hover {
+  background: #218838;
+}
+
+.status_btn.cancelled {
+  background: #dc3545;
+  color: #fff;
+}
+
+.status_btn.cancelled:hover {
+  background: #c82333;
+}
+
+.status_btn.completed {
+  background: #17a2b8;
+  color: #fff;
+}
+
+.status_btn.completed:hover {
+  background: #138496;
+}
+
+@media (max-width: 1520px) {
+  .adminReservations .container {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .reservation_header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .reservation_details {
+    text-align: left;
+  }
+
+  .reservation_actions {
+    flex-direction: column;
+  }
+
+  .status_btn {
+    width: 100%;
+  }
+}
+
+/**********************************************************************************************************************/
+
+/******************* RESERVATION HISTORY STYLING **************/
+/**********************************************************************************************************************/
+.reservationHistory {
+  display: flex;
+  min-height: calc(100vh - 200px);
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  background: #f9fbf2;
+}
+
+.reservationHistory .container {
+  max-width: 1500px;
+  min-width: 1500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reservationHistory .heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1520px) {
+  .reservationHistory .container {
+    min-width: 100%;
+  }
+}
+
 /**********************************************************************************************************************/
 
 /******************* NOT FOUND PAGE STYLING **************/
@@ -1929,25 +2457,30 @@ footer .container .banner .right {
   background-size: cover;
   background-position: right;
 }
+
 .notFound .container {
   max-width: 1500px;
   text-align: center;
 }
+
 .notFound .container img {
   margin-bottom: 2rem;
 }
+
 .notFound .container h1 {
   font-size: 2.75rem;
   font-weight: 300;
   color: #222;
   margin-bottom: 0.5rem;
 }
+
 .notFound .container p {
   font-size: 18px;
   font-weight: 300;
   color: #555;
   margin-bottom: 1.5rem;
 }
+
 .notFound .container a {
   border: 1px solid black;
   padding: 8px 28px;
@@ -1961,6 +2494,7 @@ footer .container .banner .right {
   font-size: 15px;
   color: #111;
 }
+
 .notFound .container a span {
   margin-left: 1rem;
   padding: 6px;
@@ -1968,26 +2502,32 @@ footer .container .banner .right {
   border-radius: 100%;
   color: #fff;
 }
+
 .notFound .container a:hover {
   color: #fff;
   background: #111;
   transition: ease-in-out 0.3s;
 }
+
 .notFound .container a:hover span {
   background: #fff;
   color: #111;
 }
+
 @media (max-width: 600px) {
   .notFound {
     padding: 30px 20px;
   }
+
   .notFound .container img {
     width: 100%;
   }
+
   .notFound .container h1 {
     font-size: 1.75rem;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* DISH DETAIL PAGE STYLING **************/
@@ -2000,18 +2540,22 @@ footer .container .banner .right {
   padding: 50px 20px;
   background: #f9fbf2;
 }
+
 .dishDetail .container {
   max-width: 1500px;
   min-width: 1500px;
 }
+
 .dishDetail_content {
   display: flex;
   gap: 50px;
   align-items: center;
 }
+
 .dishDetail_image {
   flex: 1;
 }
+
 .dishDetail_image img {
   width: 100%;
   max-width: 600px;
@@ -2020,17 +2564,20 @@ footer .container .banner .right {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 .dishDetail_info {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .dishDetail_info h1 {
   font-size: 3rem;
   font-weight: 300;
   color: #111;
 }
+
 .dishDetail_category {
   font-size: 1.2rem;
   color: #555;
@@ -2038,6 +2585,7 @@ footer .container .banner .right {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
 .dishDetail_description {
   font-size: 1.1rem;
   color: #333;
@@ -2045,23 +2593,27 @@ footer .container .banner .right {
   line-height: 1.8;
   letter-spacing: 1px;
 }
+
 .dishDetail_price {
   font-size: 2rem;
   font-weight: 500;
   color: #111;
   margin: 10px 0;
 }
+
 .dishDetail_quantity {
   display: flex;
   align-items: center;
   gap: 15px;
   margin: 20px 0;
 }
+
 .dishDetail_quantity label {
   font-size: 1.1rem;
   font-weight: 400;
   color: #333;
 }
+
 .quantity_controls {
   display: flex;
   align-items: center;
@@ -2070,6 +2622,7 @@ footer .container .banner .right {
   border-radius: 5px;
   padding: 5px 10px;
 }
+
 .quantity_controls button {
   background: transparent;
   border: none;
@@ -2084,20 +2637,24 @@ footer .container .banner .right {
   border-radius: 50%;
   transition: 0.3s;
 }
+
 .quantity_controls button:hover {
   background: #f0f0f0;
 }
+
 .quantity_controls span {
   font-size: 1.2rem;
   font-weight: 500;
   min-width: 30px;
   text-align: center;
 }
+
 .dishDetail_actions {
   display: flex;
   gap: 15px;
   margin: 20px 0;
 }
+
 .add_to_cart_btn,
 .order_btn {
   padding: 12px 30px;
@@ -2108,22 +2665,27 @@ footer .container .banner .right {
   transition: ease-in-out 0.3s;
   border: 1px solid #111;
 }
+
 .add_to_cart_btn {
   background: transparent;
   color: #111;
 }
+
 .add_to_cart_btn:hover {
   background: #111;
   color: #fff;
 }
+
 .order_btn {
   background: #111;
   color: #fff;
 }
+
 .order_btn:hover {
   background: #333;
   border-color: #333;
 }
+
 .dishDetail_back {
   border: 1px solid black;
   padding: 8px 28px;
@@ -2137,42 +2699,52 @@ footer .container .banner .right {
   color: #111;
   margin-top: 10px;
 }
+
 .dishDetail_back:hover {
   color: #fff;
   background: #111;
   transition: ease-in-out 0.3s;
 }
+
 @media (max-width: 1520px) {
   .dishDetail .container {
     min-width: 100%;
   }
 }
+
 @media (max-width: 1000px) {
   .dishDetail_content {
     flex-direction: column;
   }
+
   .dishDetail_image img {
     max-width: 100%;
   }
+
   .dishDetail_info h1 {
     font-size: 2.5rem;
   }
 }
+
 @media (max-width: 600px) {
   .dishDetail_info h1 {
     font-size: 2rem;
   }
+
   .dishDetail_description {
     font-size: 1rem;
   }
+
   .dishDetail_actions {
     flex-direction: column;
   }
+
   .add_to_cart_btn,
   .order_btn {
     width: 100%;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* MENU PAGE STYLING **************/
@@ -2185,22 +2757,26 @@ footer .container .banner .right {
   padding: 50px 20px;
   background: #f9fbf2;
 }
+
 .menuPage .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
   flex-direction: column;
 }
+
 .menuPage .heading_section {
   text-align: center;
   margin-bottom: 40px;
 }
+
 .menuPage .heading_section p {
   color: #333;
   font-size: 18px;
   font-weight: 300;
   margin-top: 10px;
 }
+
 .category_filter {
   display: flex;
   justify-content: center;
@@ -2208,6 +2784,7 @@ footer .container .banner .right {
   margin-bottom: 40px;
   flex-wrap: wrap;
 }
+
 .category_filter button {
   padding: 10px 30px;
   border: 1px solid #333;
@@ -2219,20 +2796,24 @@ footer .container .banner .right {
   cursor: pointer;
   transition: ease-in-out 0.3s;
 }
+
 .category_filter button:hover {
   background: #f0f0f0;
 }
+
 .category_filter button.active {
   background: #111;
   color: #fff;
   border-color: #111;
 }
+
 .menu_items_container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
   margin-bottom: 40px;
 }
+
 .menu_item_card {
   background: #fff;
   border-radius: 10px;
@@ -2244,37 +2825,44 @@ footer .container .banner .right {
   display: flex;
   flex-direction: column;
 }
+
 .menu_item_card:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
+
 .menu_item_image {
   width: 100%;
   height: 250px;
   overflow: hidden;
   background: #f0f0f0;
 }
+
 .menu_item_image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s;
 }
+
 .menu_item_card:hover .menu_item_image img {
   transform: scale(1.05);
 }
+
 .menu_item_info {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .menu_item_info h3 {
   font-size: 1.4rem;
   font-weight: 500;
   color: #111;
   margin: 0;
 }
+
 .menu_item_category {
   font-size: 0.9rem;
   color: #666;
@@ -2282,12 +2870,14 @@ footer .container .banner .right {
   letter-spacing: 1px;
   margin: 0;
 }
+
 .menu_item_price {
   font-size: 1.3rem;
   font-weight: 600;
   color: #111;
   margin-top: 5px;
 }
+
 .no_items {
   text-align: center;
   font-size: 1.2rem;
@@ -2295,36 +2885,44 @@ footer .container .banner .right {
   padding: 40px;
   grid-column: 1 / -1;
 }
+
 .dish_price {
   font-size: 1.2rem;
   font-weight: 600;
   color: #111;
   margin-top: 8px;
 }
+
 @media (max-width: 1520px) {
   .menuPage .container {
     min-width: 100%;
   }
 }
+
 @media (max-width: 768px) {
   .menu_items_container {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
   }
+
   .menu_item_image {
     height: 200px;
   }
 }
+
 @media (max-width: 600px) {
   .menu_items_container {
     grid-template-columns: 1fr;
   }
+
   .category_filter {
     gap: 10px;
   }
+
   .category_filter button {
     padding: 8px 20px;
     font-size: 14px;
   }
 }
+
 /**********************************************************************************************************************/

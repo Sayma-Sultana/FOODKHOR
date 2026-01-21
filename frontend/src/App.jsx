@@ -14,6 +14,9 @@ import AdminDashboard from "./Pages/AdminDashboard";
 import Cart from "./Pages/Cart";
 import AdminOrders from "./Pages/AdminOrders";
 import OrderHistory from "./Pages/OrderHistory";
+import AdminReservations from "./Pages/AdminReservations";
+import AdminReservationHistory from "./Pages/AdminReservationHistory";
+import AdminMenu from "./Pages/AdminMenu";
 
 const App = () => {
   return (
@@ -29,6 +32,9 @@ const App = () => {
           <Route path="/admin" element={<AdminAuth />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/orders" element={<AdminOrders />} />
+          <Route path="/admin/reservations" element={<AdminReservations />} />
+          <Route path="/admin/reservation-history" element={<AdminReservationHistory />} />
+          <Route path="/admin/menu" element={<AdminMenu />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order-history" element={<OrderHistory />} />
           <Route path="*" element={<NotFound />} />

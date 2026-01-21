@@ -4,21 +4,25 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { data } from '../restApi.json';
 import toast from 'react-hot-toast';
+import { useAuth } from '../context/AuthContext';
+import { getCartKey } from '../utils/cartUtils';
 
 const DishDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { user } = useAuth();
   const menuItems = data[0].menuItems || [];
   const dishes = data[0].dishes || [];
-  const dish = menuItems.find((item) => String(item.id) === String(id)) || 
-               dishes.find((item) => String(item.id) === String(id));
+  const dish = menuItems.find((item) => String(item.id) === String(id)) ||
+    dishes.find((item) => String(item.id) === String(id));
 
   const [quantity, setQuantity] = useState(1);
 
   const addToCart = () => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cartKey = getCartKey(user);
+    const cart = JSON.parse(localStorage.getItem(cartKey) || '[]');
     const existingItem = cart.find(item => item.id === dish.id);
-    
+
     if (existingItem) {
       existingItem.quantity += quantity;
     } else {
@@ -30,8 +34,8 @@ const DishDetail = () => {
         quantity: quantity
       });
     }
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
+
+    localStorage.setItem(cartKey, JSON.stringify(cart));
     toast.success(`${quantity} ${dish.title} added to cart!`);
   };
 
@@ -71,7 +75,7 @@ const DishDetail = () => {
               {dish.description && (
                 <p className="dishDetail_description">{dish.description}</p>
               )}
-              
+
               <div className="dishDetail_quantity">
                 <label>Quantity:</label>
                 <div className="quantity_controls">
