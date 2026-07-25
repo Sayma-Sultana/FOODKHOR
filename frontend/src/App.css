@@ -9,6 +9,7 @@
 
 body {
   overflow-x: hidden;
+  background-color: #bcfcd5;
 }
 
 ::-webkit-scrollbar {
@@ -1227,7 +1228,7 @@ footer .container .banner .right {
 
 .reservation .container .banner .reservation_form_box {
   width: 400px;
-  background: #fff;
+  background: #cfe9dc;
   height: 100%;
   padding: 20px;
   box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
@@ -1418,7 +1419,7 @@ footer .container .banner .right {
 
 .auth .container .banner .auth_form_box {
   width: 400px;
-  background: #fff;
+  background: #cfe9dc;
   height: 100%;
   padding: 20px;
   box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
@@ -1883,7 +1884,7 @@ footer .container .banner .right {
 }
 
 .order_summary {
-  background: #fff;
+  background: #cfe9dc;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -2815,7 +2816,7 @@ footer .container .banner .right {
 }
 
 .menu_item_card {
-  background: #fff;
+  background: #cfe9dc;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
