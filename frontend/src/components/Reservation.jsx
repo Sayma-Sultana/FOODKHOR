@@ -46,7 +46,7 @@ const Reservation = () => {
      <section className="reservation" id="reservation">
        <div className="container">
         <div className="banner">
-           <img src="/reservation.png" alt="res" />
+           <img src="/pancake.png" alt="res" />
         </div>
         <div className="banner">
           <div className="reservation_form_box">

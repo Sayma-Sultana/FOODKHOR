@@ -50,7 +50,7 @@ const AdminAuth = () => {
             <section className="auth">
                 <div className="container">
                     <div className="banner">
-                        <img src="/reservation.png" alt="admin" />
+                        <img src="/pancake.png" alt="admin" />
                     </div>
                     <div className="banner">
                         <div className="auth_form_box">

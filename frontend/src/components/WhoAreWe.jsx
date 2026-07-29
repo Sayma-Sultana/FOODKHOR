@@ -19,7 +19,7 @@ const WhoAreWe = () => {
         </div>
         <div className="image_banner">
             <img src="/center.svg" alt="center" className='gradient_bg'/>
-            <img src="/whoweare.png" alt="who" />
+            <img src="/whoweare1.png" alt="who" />
         </div>
                 <div className="text_banner">
             {

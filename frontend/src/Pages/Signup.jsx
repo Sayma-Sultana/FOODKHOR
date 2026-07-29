@@ -39,7 +39,7 @@ const Signup = () => {
             <section className="auth">
                 <div className="container">
                     <div className="banner">
-                        <img src="/reservation.png" alt="signup" />
+                        <img src="/pancake.png" alt="signup" />
                     </div>
                     <div className="banner">
                         <div className="auth_form_box">

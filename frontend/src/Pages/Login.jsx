@@ -29,7 +29,7 @@ const Login = () => {
             <section className="auth">
                 <div className="container">
                     <div className="banner">
-                        <img src="/reservation.png" alt="login" />
+                        <img src="/pancake.png" alt="login" />
                     </div>
                     <div className="banner">
                         <div className="auth_form_box">

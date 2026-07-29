@@ -246,7 +246,7 @@
         ],
         "dishes": [
             {
-                "id": 1,
+                "id": 9,
                 "title": "Kacchi",
                 "category": "Lunch/Dinner",
                 "image": "/kacchi.png",
@@ -255,7 +255,7 @@
                 "popular": true
             },
             {
-                "id": 2,
+                "id": 5,
                 "title": "Chicken Biriyani",
                 "category": "Lunch/Dinner",
                 "image": "/chicken_biriyani1.png",
@@ -264,16 +264,16 @@
                 "popular": true
             },
             {
-                "id": 3,
-                "title": "Pizza",
+                "id": 20,
+                "title": "Fried Chicken",
                 "category": "Fastfoods",
-                "image": "/pizza.png",
-                "price": 450,
-                "description": "Wood-fired pizza with fresh mozzarella, premium toppings, and our signature tomato sauce on a crispy thin crust.",
+                "image": "/fried_chicken1.png",
+                "price": 280,
+                "description": "Crispy fried chicken pieces marinated in special spices, deep-fried to golden perfection. Served with dipping sauce.",
                 "popular": true
             },
             {
-                "id": 4,
+                "id": 21,
                 "title": "Fuchka",
                 "category": "Fastfoods",
                 "image": "/fuchka.png",
@@ -285,26 +285,26 @@
         "team": [
             {
                 "id": 1,
-                "image": "/team_member_1.png",
-                "name": "JOHNATHAN TYLER",
+                "image": "/chef_member1.png",
+                "name": "Rabeya Khatun",
                 "designation": "Founder & Head Chef"
             },
             {
                 "id": 2,
-                "image": "/team_member_2.png",
-                "name": "WADE WARREN",
+                "image": "/chef_member2.png",
+                "name": "Shumon Islam",
                 "designation": "Sous Chef"
             },
             {
                 "id": 3,
-                "image": "/team_member_3.png",
-                "name": "JHON DOE",
+                "image": "/chef_member3.png",
+                "name": "Rakib Hasan",
                 "designation": "Fast Food Chef"
             },
             {
                 "id": 4,
-                "image": "/team_member_4.png",
-                "name": "ALEX COAL",
+                "image": "/chef_member4.png",
+                "name": "Emma Charlotte",
                 "designation": "Senior Chef"
             }
         ],
