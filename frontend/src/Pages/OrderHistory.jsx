@@ -20,8 +20,8 @@ const OrderHistory = () => {
     const fetchOrders = async () => {
         try {
             const endpoint = user.role === 'admin'
-                ? 'http://localhost:4000/api/v1/order/admin/all'
-                : 'http://localhost:4000/api/v1/order/my-orders';
+                ? `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/order/admin/all`
+                : `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/order/my-orders`;
             
             const { data } = await axios.get(endpoint, { withCredentials: true });
             setOrders(data.orders);

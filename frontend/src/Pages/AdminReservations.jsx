@@ -20,7 +20,7 @@ const AdminReservations = () => {
     const fetchPendingReservations = async () => {
         try {
             const { data } = await axios.get(
-                'http://localhost:4000/api/v1/reservation/admin/pending',
+                `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/reservation/admin/pending`,
                 { withCredentials: true }
             );
             setReservations(data.reservations);
@@ -34,7 +34,7 @@ const AdminReservations = () => {
     const updateReservationStatus = async (reservationId, status) => {
         try {
             const { data } = await axios.put(
-                `http://localhost:4000/api/v1/reservation/admin/update-status/${reservationId}`,
+                `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/reservation/admin/update-status/${reservationId}`,
                 { status },
                 {
                     headers: { 'Content-Type': 'application/json' },

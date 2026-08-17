@@ -35,8 +35,8 @@ const AdminMenu = () => {
     const fetchData = async () => {
         try {
             const [dishesRes, categoriesRes] = await Promise.all([
-                axios.get('http://localhost:4000/api/v1/dish/getall', { withCredentials: true }),
-                axios.get('http://localhost:4000/api/v1/category/getall', { withCredentials: true })
+                axios.get(`\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/dish/getall`, { withCredentials: true }),
+                axios.get(`\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/category/getall`, { withCredentials: true })
             ]);
             setDishes(dishesRes.data.dishes);
             setCategories(categoriesRes.data.categories);
@@ -52,7 +52,7 @@ const AdminMenu = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                'http://localhost:4000/api/v1/category/add',
+                `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/category/add`,
                 { title: newCategory },
                 { withCredentials: true }
             );
@@ -66,7 +66,7 @@ const AdminMenu = () => {
 
     const handleDeleteCategory = async (id) => {
         try {
-            await axios.delete(`http://localhost:4000/api/v1/category/delete/${id}`, { withCredentials: true });
+            await axios.delete(`\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/category/delete/${id}`, { withCredentials: true });
             setCategories(categories.filter(c => c._id !== id));
             toast.success('Category deleted');
         } catch (error) {
@@ -89,7 +89,7 @@ const AdminMenu = () => {
 
             if (editingDish) {
                 const { data } = await axios.put(
-                    `http://localhost:4000/api/v1/dish/update/${editingDish._id}`,
+                    `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/dish/update/${editingDish._id}`,
                     formData,
                     {
                         withCredentials: true,
@@ -100,7 +100,7 @@ const AdminMenu = () => {
                 toast.success('Dish updated successfully');
             } else {
                 const { data } = await axios.post(
-                    'http://localhost:4000/api/v1/dish/add',
+                    `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/dish/add`,
                     formData,
                     {
                         withCredentials: true,
@@ -122,7 +122,7 @@ const AdminMenu = () => {
     const handleDeleteDish = async (id) => {
         if (!window.confirm('Are you sure you want to delete this dish?')) return;
         try {
-            await axios.delete(`http://localhost:4000/api/v1/dish/delete/${id}`, { withCredentials: true });
+            await axios.delete(`\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/dish/delete/${id}`, { withCredentials: true });
             setDishes(dishes.filter(d => d._id !== id));
             toast.success('Dish deleted');
         } catch (error) {

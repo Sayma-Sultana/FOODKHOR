@@ -14,7 +14,7 @@ const app = express();
 dotenv.config({ path: "./config/config.env" });
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 }));
@@ -30,6 +30,10 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/order", orderRouter);
 app.use("/api/v1/category", categoryRouter);
 app.use("/api/v1/dish", dishRouter);
+
+app.get("/ping", (req, res) => {
+  res.status(200).json({ message: "pong" });
+});
 
 dbConnection();
 

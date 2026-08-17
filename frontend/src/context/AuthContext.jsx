@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
     const checkUser = async () => {
         try {
             const { data } = await axios.get(
-                'http://localhost:4000/api/v1/auth/me',
+                `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/auth/me`,
                 { withCredentials: true }
             );
             setUser(data.user);
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password, role = null) => {
         try {
             const { data } = await axios.post(
-                'http://localhost:4000/api/v1/auth/login',
+                `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/auth/login`,
                 { email, password, role },
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
     const register = async (userData) => {
         try {
             const { data } = await axios.post(
-                'http://localhost:4000/api/v1/auth/register',
+                `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/auth/register`,
                 userData,
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            await axios.get('http://localhost:4000/api/v1/auth/logout', {
+            await axios.get(`\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/auth/logout`, {
                 withCredentials: true,
             });
             setUser(null);
