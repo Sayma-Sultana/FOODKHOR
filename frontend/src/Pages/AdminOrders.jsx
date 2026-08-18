@@ -20,7 +20,7 @@ const AdminOrders = () => {
     const fetchPendingOrders = async () => {
         try {
             const { data } = await axios.get(
-                `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/order/admin/pending`,
+                `${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api/v1/order/admin/pending`,
                 { withCredentials: true }
             );
             setOrders(data.orders);
@@ -34,7 +34,7 @@ const AdminOrders = () => {
     const updateOrderStatus = async (orderId, status) => {
         try {
             const { data } = await axios.put(
-                `\$\{import.meta.env.VITE_API_URL || 'http://localhost:4000'\}/api/v1/order/admin/update-status/${orderId}`,
+                `${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api/v1/order/admin/update-status/${orderId}`,
                 { status },
                 {
                     headers: { 'Content-Type': 'application/json' },

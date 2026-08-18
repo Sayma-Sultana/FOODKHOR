@@ -11,10 +11,18 @@ import categoryRouter from "./routes/categoryRoute.js";
 import dishRouter from "./routes/dishRoute.js";
 
 const app = express();
+app.set("trust proxy", 1);
 dotenv.config({ path: "./config/config.env" });
 
 app.use(cors({
-  origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (origin.includes('localhost') || origin.includes('127.0.0.1') || (process.env.FRONTEND_URL && origin.includes(process.env.FRONTEND_URL.replace(/\/$/, '')))) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 }));
